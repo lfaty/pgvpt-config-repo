@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    # On cible le conteneur pgvpt-postgres défini dans Docker
+    url: jdbc:postgresql://pgvpt-postgres:5432/geolocalisation_db
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://pgvpt-discovery:8761/eureka/

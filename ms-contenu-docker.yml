@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:db-contenu}:5432/${DB_NAME:contenu_db}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:admin}
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://pgvpt-discovery:8761/eureka/
+
+  instance:
+    prefer-ip-address: true

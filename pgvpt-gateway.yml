@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: pgvpt-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: ms-patrimoine
+          uri: lb://ms-patrimoine
+          predicates:
+            - Path=/api/v1/patrimoines/**
+
+        - id: ms-geolocalisation
+          uri: lb://ms-geolocalisation
+          predicates:
+            - Path=/api/v1/geolocalisations/**
+
+        - id: ms-contenu
+          uri: lb://ms-contenu
+          predicates:
+            - Path=/api/v1/contenus/**
+
+        - id: ms-media
+          uri: lb://ms-media
+          predicates:
+            - Path=/api/v1/medias/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://pgvpt-discovery:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+  endpoint:
+    health:
+      show-details: always

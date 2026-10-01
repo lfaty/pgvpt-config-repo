@@ -1,0 +1,16 @@
+server:
+  port: 3007
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: ms-media
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:media_db}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:admin}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:validate}

@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:db-geolocalisation}:5432/${DB_NAME:geolocalisation_db}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:admin}
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://pgvpt-discovery:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
