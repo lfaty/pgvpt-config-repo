@@ -15,16 +15,7 @@ spring:
         - id: ms-geolocalisation
           uri: lb://ms-geolocalisation
           predicates:
-            - Path=/api/v1/geolocalisations/**,
-             /api/v1/pays/**,/api/v1/regions/**,
-              /api/v1/departements/**,
-              /api/v1/communes/**,
-              /api/v1/villages/**,
-              /api/v1/quartiers/**,
-              /api/v1/zones-geographiques/**,
-              /api/v1/zones-touristiques/**,
-              /api/v1/points-acces/**,
-              /api/v1/cartographie/**
+            - Path=/api/v1/geolocalisations/**
 
         - id: ms-contenu
           uri: lb://ms-contenu
