@@ -27,6 +27,11 @@ spring:
           predicates:
             - Path=/api/v1/medias/**
 
+        - id: ms-circuit
+          uri: lb://ms-circuit
+          predicates:
+            - Path=/api/v1/circuits/**
+
 eureka:
   client:
     register-with-eureka: true
