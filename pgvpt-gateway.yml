@@ -32,6 +32,16 @@ spring:
           predicates:
             - Path=/api/v1/circuits/**
 
+        - id: ms-evenement
+          uri: lb://ms-evenement
+          predicates:
+            - Path=/api/v1/evenements/**
+
+        - id: ms-evenement-sessions
+          uri: lb://ms-evenement
+          predicates:
+            - Path=/api/v1/sessions/**
+
 eureka:
   client:
     register-with-eureka: true
