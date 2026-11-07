@@ -62,6 +62,21 @@ spring:
           predicates:
             - Path=/api/v1/users/**
 
+        - id: ms-reservation
+          uri: lb://ms-reservation
+          predicates:
+            - Path=/api/v1/reservations/**
+
+        - id: ms-reservation-participants
+          uri: lb://ms-reservation
+          predicates:
+            - Path=/api/v1/participants/**
+
+        - id: ms-reservation-disponibilites
+          uri: lb://ms-reservation
+          predicates:
+            - Path=/api/v1/disponibilites/**
+
 eureka:
   client:
     register-with-eureka: true
