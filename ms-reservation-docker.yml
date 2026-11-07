@@ -27,3 +27,4 @@ eureka:
       defaultZone: http://pgvpt-discovery:8761/eureka/
   instance:
     prefer-ip-address: true
+
