@@ -90,14 +90,14 @@ spring:
         - id: ms-inventaire-api
           uri: lb://ms-inventaire
           predicates:
-            - Path=/api/v1/campagnes/**, /api/v1/missions/**, /api/v1/inventaires/**, /api/v1/tableaux-de-bord/**
+            - Path=/api/v1/inventaires/**
           filters:
             - StripPrefix=2
 
         - id: ms-inventaire-direct
           uri: lb://ms-inventaire
           predicates:
-            - Path=/campagnes/**, /missions/**, /inventaires/**, /tableaux-de-bord/**
+            - Path=/inventaires/**
 
 eureka:
   client:
