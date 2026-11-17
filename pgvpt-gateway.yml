@@ -87,17 +87,10 @@ spring:
           predicates:
             - Path=/api/v1/disponibilites/**
 
-        - id: ms-inventaire-api
+        - id: ms-inventaire
           uri: lb://ms-inventaire
           predicates:
             - Path=/api/v1/inventaires/**
-          filters:
-            - StripPrefix=2
-
-        - id: ms-inventaire-direct
-          uri: lb://ms-inventaire
-          predicates:
-            - Path=/inventaires/**
 
 eureka:
   client:
