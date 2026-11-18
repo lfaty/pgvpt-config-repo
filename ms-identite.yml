@@ -6,6 +6,11 @@ server:
 spring:
   application:
     name: ms-identite
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${KEYCLOAK_JWKS_URL:http://${KEYCLOAK_HOST:pgvpt-keycloak}:${KEYCLOAK_PORT:8080}/realms/pgvpt/protocol/openid-connect/certs}
   datasource:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5440}/${DB_NAME:identite_db}
     username: ${DB_USER:postgres}
@@ -26,4 +31,11 @@ eureka:
       defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
   instance:
     prefer-ip-address: true
+
+keycloak:
+  url: ${KEYCLOAK_URL:http://${KEYCLOAK_HOST:pgvpt-keycloak}:${KEYCLOAK_PORT:8080}}
+  realm: ${KEYCLOAK_REALM:pgvpt}
+  client-id: ${KEYCLOAK_CLIENT_ID:pgvpt-identite-api}
+  client-secret: ${KEYCLOAK_CLIENT_SECRET:pgvpt-identite-secret-2026}
+
 
